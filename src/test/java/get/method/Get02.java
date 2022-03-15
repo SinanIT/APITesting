@@ -1,12 +1,13 @@
 package get.method;
 
+import BaseUrl.herokuBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
-public class Get02 {
+public class Get02 extends herokuBaseUrl {
 
         /*
         when
