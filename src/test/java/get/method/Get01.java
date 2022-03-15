@@ -41,7 +41,17 @@ public class Get01 {
         // 4- Assert the output
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
 
+        //how to print content-type, status code, status line etc
+        System.out.println("Status code: " +response.getStatusCode());
+        System.out.println("Content type: " +response.contentType());
+        System.out.println("Status line: " +response.statusLine());
+        System.out.println();
+        System.out.println("Server: " + response.getHeader("Server"));
+        System.out.println();
+        System.out.println("All headers:\n " + response.getHeaders());
+        System.out.println("Execution Time: " + response.getTime());
 
 
     }
+
 }
