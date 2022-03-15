@@ -39,6 +39,7 @@ public class Get01 {
         response.prettyPrint();
 
         // 4- Assert the output
+        response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
 
 
 
