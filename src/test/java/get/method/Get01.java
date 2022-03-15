@@ -48,7 +48,7 @@ public class Get01 {
         System.out.println();
         System.out.println("Server: " + response.getHeader("Server"));
         System.out.println();
-        System.out.println("All headers:\n " + response.getHeaders());
+        System.out.println("All headers:\n  " + response.getHeaders());
         System.out.println("Execution Time: " + response.getTime());
 
 
