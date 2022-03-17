@@ -11,6 +11,6 @@ public class DummyBaseUrl {
     // create a setup method
     @Before// this method will be executed before every test method
     public void setup(){
-        spec = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1").build();
     }
 }

@@ -33,7 +33,7 @@ public class Get05 extends HerokuappBaseUrl {
 
     @Test
     public void get01(){
-        spec.pathParams("first", "booking", "second", 11);
+        spec.pathParams("first", "booking", "second", 24);
         //set the expected data
 
         //send request
@@ -71,12 +71,13 @@ public class Get05 extends HerokuappBaseUrl {
             2-by using the object, use asserEquals(), assertTrue(), assertFalse()
             3-DO NOT FORGET to use assertAll() method at the end.
          */
-        SoftAssert softAssert = new SoftAssert();
-
-
-        softAssert.assertEquals(json.getString("firstname"), "CEMCEM", "Firstname is not matching");
-
-        softAssert.assertAll();
+        SoftAssert sa = new SoftAssert();
+        sa.assertEquals(json.getString("firstname"), "CEMCEM", "Firstname is not matching");
+        sa.assertEquals(json.getString("lastname"), "YILMAZ", "Lastname is not matching");
+        sa.assertEquals(json.getInt("totalprice"), 111, "totalprice is not matching");
+        sa.assertEquals(json.getString("bookingdates.checkin"),"2017-05-23", "Checkin date is not matching");
+        sa.assertEquals(json.getString("bookingdates.checkout"),"2019-07-02", "Checkout date is not matching");
+        sa.assertAll();//always use this method when do soft assertion
 
 
 
