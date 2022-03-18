@@ -3,11 +3,9 @@ package get.method;
 import BaseUrls.HerokuappBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 public class Deserialization2 extends HerokuappBaseUrl {

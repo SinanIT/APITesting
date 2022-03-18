@@ -6,7 +6,6 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import testdata.OpenWeatherMapTestData;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 public class Get07 extends OpenWeatherBaseUrl {

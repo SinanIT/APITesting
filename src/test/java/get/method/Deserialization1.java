@@ -3,7 +3,6 @@ package get.method;
 import BaseUrls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 import static io.restassured.RestAssured.given;
