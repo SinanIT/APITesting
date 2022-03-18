@@ -6,9 +6,6 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import testdata.AgroMonitoringTestData;
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
-import static org.hamcrest.Matchers.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
