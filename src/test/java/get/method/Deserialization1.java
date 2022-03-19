@@ -1,6 +1,7 @@
 package get.method;
 
 import BaseUrls.JsonPlaceHolderBaseUrl;
+import com.google.gson.Gson;
 import io.restassured.response.Response;
 import org.junit.Test;
 import java.util.HashMap;
@@ -53,8 +54,15 @@ public class Deserialization1 extends JsonPlaceHolderBaseUrl {
         Response response =  given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
+        //GSON Deserialization==> Jason converted to java object
         Map<String, Object> actualData = response.as(HashMap.class); // as method coming from GSON
-        System.out.println(actualData);
+        System.out.println("Java Object from JSON data " + actualData);
+
+        // Serialization ==> Java object converted to Json Data
+        Gson gson = new Gson();// create GSON object
+        String jsonFromJavaObject = gson.toJson(actualData);
+        System.out.println("Json data from Java Object " + jsonFromJavaObject);
+
 
         //assertion
         assertEquals(expectedData.get("statusCode"), response.getStatusCode());

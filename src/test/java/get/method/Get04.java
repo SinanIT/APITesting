@@ -11,7 +11,7 @@ public class Get04 extends JsonPlaceHolderBaseUrl {
 
     /*
     When
-    I send a GET request to REST API URL https://jsonplaceholder.tupicode.com/todos/23
+    I send a GET request to REST API URL https://jsonplaceholder.typicode.com/todos/23
     then
     HTTP Status code should be 200
     And
