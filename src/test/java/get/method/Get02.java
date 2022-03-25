@@ -11,7 +11,7 @@ public class Get02 extends herokuBaseUrl {
 
         /*
         when
-        - I send a GET request the ure https://restful-booker.herokuapp.com/booking/1001
+        - I send a GET request the ure https://restful-booker.herokuapp.com/booking
         then
         HTTP status code should be 404
         And
@@ -38,5 +38,19 @@ public class Get02 extends herokuBaseUrl {
 
             System.out.println("Status code: " + response.statusCode());
             System.out.println("Status line: " + response.statusLine());
+        }
+
+        @Test
+    public void get03(){
+            //Set url
+            spec.pathParam("first", "booking")
+                    .queryParams("firstname", "Mark", "lastname", "Ericsson");
+
+            //set the expected data
+            Response response = given().spec(spec).when().get("/{first}");
+            response.prettyPrint();
+
+            response.then().assertThat().statusCode(200);
+
         }
 }
