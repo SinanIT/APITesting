@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 
 public class Get05 extends HerokuappBaseUrl {
@@ -49,16 +51,17 @@ public class Get05 extends HerokuappBaseUrl {
 
         //JSON PATH CLASS we use it to navigate inside jason data
         JsonPath json = response.jsonPath();
-//        //second assert way
-//        assertEquals("Status code is not matching", 200, response.getStatusCode());
-//        assertEquals("Contents type is not application/json", "application/json; charset=utf-8", response.getContentType());
-//        assertEquals("First name is not matching", "CEMCEM", json.getString("firstname"));
-//        assertTrue("Last name is not matching", json.getString("lastname").equals("YILMAZ"));
-//        assertTrue("Total Price is not matching", json.getInt("totalprice")==111);
-//        assertTrue("Depositpaid is not matching", json.getBoolean("depositpaid")==false);
-//        assertEquals("Checkin date is not matching", "2017-05-23", json.getString("bookingdates.checkin"));
-//        assertEquals("Checkout date is not matching","2019-07-02", json.getString("bookingdates.checkout"));
-//        assertTrue("Checkout date is not matching",json.getString("bookingdates.checkout").equals("2019-07-02")); // asserTrue version
+        //second assert way
+        assertEquals("Status code is not matching", 200, response.getStatusCode());
+        assertEquals("Contents type is not application/json", "application/json; charset=utf-8", response.getContentType());
+        assertEquals("First name is not matching", "CEMCEM", json.getString("firstname"));
+        assertTrue("Last name is not matching", json.getString("lastname").equals("YILMAZ"));
+        String a = json.getString("find(it.firstname=='CEMCEM').firstname");
+        assertTrue("Total Price is not matching", json.getInt("totalprice")==111);
+        assertTrue("Depositpaid is not matching", json.getBoolean("depositpaid")==false);
+        assertEquals("Checkin date is not matching", "2017-05-23", json.getString("bookingdates.checkin"));
+        assertEquals("Checkout date is not matching","2019-07-02", json.getString("bookingdates.checkout"));
+        assertTrue("Checkout date is not matching",json.getString("bookingdates.checkout").equals("2019-07-02")); // asserTrue version
 
 
         //Soft Assertion (Verification) Execution won't stop in failure

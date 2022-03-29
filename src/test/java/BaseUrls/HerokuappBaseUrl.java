@@ -12,6 +12,6 @@ public class HerokuappBaseUrl {
     // create a setup method
     @Before// this method will be executed before every test method
     public void setup(){
-        spec = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com/booking").build();
     }
 }
